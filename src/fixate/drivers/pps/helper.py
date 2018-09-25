@@ -158,12 +158,6 @@ class PPS(metaclass=ABCMeta):
         self.address = Address()
         self.series = Channel()
         self.parallel = Channel()
-        
-    def series(self):
-        
-        raise InstrumentFeatureUnavailable(
-            "{} not available on this device".format(inspect.currentframe().f_code.co_name))
-        
 
     def idn(self):
         raise InstrumentFeatureUnavailable(
