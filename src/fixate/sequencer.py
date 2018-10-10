@@ -387,7 +387,7 @@ class Sequencer:
             self.chk_pass += 1
         else:
             self.chk_fail += 1
-        pub.sendMessage("Check", passes=result, chk=chk,
+        pub.sendMessage("Check.{}".format(chk.target.__name__[1:]), passes=result, chk=chk,
                         chk_cnt=self.chk_pass + self.chk_fail, context=self.levels())
         if not result:
             raise CheckFail("Check function returned failure, aborting test")
